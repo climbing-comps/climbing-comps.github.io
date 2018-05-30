@@ -236,6 +236,7 @@ textarea {
 .masthead {
   padding: 20px 0;
   border-bottom: 2px solid $orange;
+  text-align: left;
 
   @include mobile {
     text-align: center;
