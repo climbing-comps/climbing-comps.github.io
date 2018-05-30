@@ -3,19 +3,23 @@ layout: default
 ---
 
 <div class="posts">
-    <h1>June</h1>
-    {% for post in site.posts reversed | where:"month","June" %}
-      <article class="post">
-        <h2><a href="{{ post.link }}">
-          {% assign d = post.date | date: "%-d"  %}
-          {% case d %}
-          {% when '1' or '21' or '31' %}{{ d }}st
-          {% when '2' or '22' %}{{ d }}nd
-          {% when '3' or '23' %}{{ d }}rd
-          {% else %}{{ d }}th
-          {% endcase %} - {{ post.title }}</a></h2>
-        <h4>{{ post.venue }} @ {{ post.time }}</h4>
-        <a href="{{ post.link }}" class="read-more">Find Out More</a>
-      </article>
+    {% assign m = '' %}
+    {% for post in site.posts reversed %}
+      {% if m == post.month %}
+        {% assign m = post.month %}
+        <h1>{{ m }}</h1>
+      {% endif %}
+        <article class="post">
+          <h2><a href="{{ post.link }}">
+            {% assign d = post.date | date: "%-d"  %}
+            {% case d %}
+            {% when '1' or '21' or '31' %}{{ d }}st
+            {% when '2' or '22' %}{{ d }}nd
+            {% when '3' or '23' %}{{ d }}rd
+            {% else %}{{ d }}th
+            {% endcase %} - {{ post.title }}</a></h2>
+          <h4>{{ post.venue }} @ {{ post.time }}</h4>
+          <a href="{{ post.link }}" class="read-more">Find Out More</a>
+        </article>
     {% endfor %}
 </div>
