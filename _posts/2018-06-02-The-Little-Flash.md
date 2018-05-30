@@ -1,6 +1,6 @@
 ---
 layout: post
 title: The Little Flash - Highball Norwich
-date: 2nd June 2018
+month: June
 excerpt: https://highballclimbingnorwich.com/events/little-flash/
 ---
