@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The Little Flash - Highball Norwich
+title: The Little Flash
 month: June
-excerpt: https://highballclimbingnorwich.com/events/little-flash/
+venue: Highball Norwich
+link: https://highballclimbingnorwich.com/events/little-flash/
 ---

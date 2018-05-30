@@ -4,10 +4,12 @@ layout: default
 
 <div class="posts">
     <h1>June</h1>
+    <hr>
     {% for post in site.posts reversed | where:"month","June" %}
       <article class="post">
-        <h2><a href="{{ post.excerpt }}">{{ post.date | date: "%B %e, %Y" }} - {{ post.title }}</a></h2>
-        <a href="{{ post.excerpt }}" class="read-more">Find Out More</a>
+        <h2><a href="{{ post.link }}">{{ post.date | date: "%B %e" }} - {{ post.title }}</a></h2>
+        <h4>{{ post.venue }}</h4>
+        <a href="{{ post.link }}" class="read-more">Find Out More</a>
       </article>
     {% endfor %}
 </div>

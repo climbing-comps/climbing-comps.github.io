@@ -341,6 +341,10 @@ nav {
 // .main
 //
 
+#main {
+  text-align: center;
+}
+
 .container .post {
   @include mobile {
     text-align: center;

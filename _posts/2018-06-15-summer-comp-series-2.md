@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Summer Comp Series (Round 2) - Boulder Brighton
+title: Summer Comp Series (Round 2)
 month: June
-excerpt: https://www.boulderbrighton.com/news/summer-comp-series-2018-r2
+venue: Boulder Brighton
+link: https://www.boulderbrighton.com/news/summer-comp-series-2018-r2
 ---

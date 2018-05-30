@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Teams Competition - Climbing Depot Leeds
+title: Teams Competition
 month: June
-excerpt: https://www.theclimbingdepot.co.uk/leeds/news/teams-competition-2018-16th-june-depot-leeds
+venue: Climbing Depot Leeds
+link: https://www.theclimbingdepot.co.uk/leeds/news/teams-competition-2018-16th-june-depot-leeds
 ---
