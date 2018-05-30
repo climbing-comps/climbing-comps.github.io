@@ -11,6 +11,10 @@
   &.wall {
     background-image: url(https://raw.githubusercontent.com/climbing-comps/climbing-comps.github.io/master/images/walls.png);
   }
+  &.back {
+    background-image: url(https://raw.githubusercontent.com/climbing-comps/climbing-comps.github.io/master/images/back.png);
+    margin: 0;
+  }
   &:hover, &:active {
     opacity: 0.6;
   }
