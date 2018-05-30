@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Walls Covered
-permalink: /walls-covered.html
+permalink: /walls-covered/
 ---
 
 (Crudely) checking blogs on the following websites:
