@@ -56,6 +56,12 @@ h1 {
 
 h2 {
   font-size: 24px;
+  a {
+    color: $black;
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
 }
 
 h3 {
