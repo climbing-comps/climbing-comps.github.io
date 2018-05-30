@@ -4,6 +4,7 @@ IFS=';'
 urls=$(<blog_urls.csv)
 whitelist=$(<whitelist.csv)
 blacklist=$(<blacklist.csv)
+processed_events=$(<processed_events.csv)
 competitions=()
 for url in ${urls[@]}; do
 	url="$(echo -e "${url}" | tr -d '[:space:]')"
@@ -23,12 +24,16 @@ for url in ${urls[@]}; do
 					disallowed="$(echo -e "${disallowed}" | tr -d '[:space:]')"
 					if [[ $href != *"${disallowed}"* ]]; then
 						if [[ $href = *"${url}"* ]]; then
-							if [[ ! " ${competitions[@]} " =~ " ${href} " ]]; then
-								competitions+=("${href}")
+							if [[ $processed_events != *"${href}"* ]]; then
+								if [[ ! " ${competitions[@]} " =~ " ${href} " ]]; then
+									competitions+=("${href}")
+								fi
 							fi
 						else
-							if [[ ! " ${competitions[@]} " =~ " ${url}${href} " ]]; then
-								competitions+=("${url}${href}")
+							if [[ $processed_events != *"${url}${href}"* ]]; then
+								if [[ ! " ${competitions[@]} " =~ " ${url}${href} " ]]; then
+									competitions+=("${url}${href}")
+								fi
 							fi
 						fi
 					fi
@@ -40,6 +45,7 @@ done
 
 echo "Found ${#competitions[@]} possible competitions:"
 for competition in ${competitions[@]}; do
+	printf "${competition};\n" >> processed_events.csv
 	echo "Create event for ${competition}? (yes/no)"
 	read response
 	if [ 'yes' == $response ]; then
