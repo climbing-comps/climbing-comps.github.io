@@ -29,7 +29,6 @@ blog_urls.forEach( function( url ) {
         } );
     };
     xhr = createCORSRequest( 'GET', url );
-    console.log( xhr );
     if( ! xhr ) {
         console.log( 'CORS not supported' );
     }
