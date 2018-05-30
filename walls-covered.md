@@ -26,4 +26,4 @@ permalink: /walls-covered/
 - The Castle
 - The Reach
 
-Please don't expect this to catch all competitions!
+**Please don't expect this to catch all competitions!**

@@ -109,6 +109,10 @@ ul ul, ol ul {
   list-style-type: circle;
 }
 
+li {
+  list-style: none;
+}
+
 em, i {
   font-style: italic;
 }
