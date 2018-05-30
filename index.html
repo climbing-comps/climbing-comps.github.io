@@ -5,7 +5,7 @@ layout: default
 <div class="posts">
     {% assign m = '' %}
     {% for post in site.posts reversed %}
-      {% if m == post.month %}
+      {% if m != post.month %}
         {% assign m = post.month %}
         <h1>{{ m }}</h1>
       {% endif %}
