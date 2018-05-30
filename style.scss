@@ -366,10 +366,11 @@ nav {
 .posts {
   h1 {
     background-color: $lightGray;
-    border-bottom: 2px solid $orange;
+    border-bottom: 3px solid #ffca6f;
     text-align: center;
     margin: 0;
     padding: 15px;
+    border-top: 2px solid #ffca6f;
   }
 }
 
