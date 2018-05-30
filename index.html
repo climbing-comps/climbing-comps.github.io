@@ -4,7 +4,7 @@ layout: default
 
 <div class="posts">
     <h1>June</h1>
-    {% for post in site.posts | where:"month","June" | sort: post.date, 'last' %}
+    {% for post in site.posts reversed | where:"month","June" %}
       <article class="post">
         <h2><a href="{{ post.excerpt }}">{{ post.date | date: "%B %e, %Y" }} - {{ post.title }}</a></h2>
         <a href="{{ post.excerpt }}" class="read-more">Find Out More</a>
