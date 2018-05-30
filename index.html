@@ -10,10 +10,10 @@ layout: default
         <h1>{{ m }}</h1>
       {% endif %}
         <article class="post">
-          <h2><a href="{{ post.link }}">
+          <h2><a target="_blank" href="{{ post.link }}">
             {% assign d = post.date | date: "%-d"  %}{{ post.date | date: "%A" }} {% case d %}{% when '1' or '21' or '31' %}{{ d }}st{% when '2' or '22' %}{{ d }}nd{% when '3' or '23' %}{{ d }}rd{% else %}{{ d }}th{% endcase %} - {{ post.title }}</a></h2>
           <h4>{{ post.venue }} @ {{ post.time }}</h4>
-          <a href="{{ post.link }}" class="read-more">Find Out More</a>
+          <a target="_blank" href="{{ post.link }}" class="read-more">Find Out More</a>
         </article>
     {% endfor %}
 </div>
