@@ -22,16 +22,19 @@ var blog_urls = [ 'https://www.awesomewalls.co.uk/blog',
 ];
 
 blog_urls.forEach( function( url ) {
+    xhr = createCORSRequest( 'GET', url );
+    if( ! xhr ) {
+        console.log( 'CORS not supported' );
+    }
     xhr.onload = function() {
         var doc = parser.parseFromString( xhr.responseText, "text/html" );
         doc.getElementsByTagName( 'a' ).forEach( function( link ) {
             console.log( link.getAttribute( "href" ) );
         } );
     };
-    xhr = createCORSRequest( 'GET', url );
-    if( ! xhr ) {
-        console.log( 'CORS not supported' );
-    }
+    xhr.onerror = function() {
+        console.log('There was an error!');
+    };
 } );
 
 function createCORSRequest( method, url ) {
