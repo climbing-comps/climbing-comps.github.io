@@ -29,9 +29,7 @@ blog_urls.forEach( function( url ) {
     xhr.onload = function() {
         var doc = parser.parseFromString( xhr.responseText, "text/html" );
         var links = doc.getElementsByTagName( 'a' );
-        links.forEach( function( link ) {
-            console.log( link.getAttribute( "href" ) );
-        } );
+        console.log( links );
     };
     xhr.onerror = function() {
         console.log('There was an error!');
