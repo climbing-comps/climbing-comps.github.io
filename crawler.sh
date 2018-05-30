@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 IFS=';'
-#echo "loading URLs"
+echo "loading URLs"
 urls=$(<blog_urls.csv)
 whitelist=$(<whitelist.csv)
 blacklist=$(<blacklist.csv)
@@ -28,6 +28,41 @@ for url in ${urls[@]}; do
 		done
 	done
 done
+
+echo "Found ${#competitions[@]} possible competitions:"
 for competition in ${competitions[@]}; do
-	echo $competition
+	echo "Create event for ${competition}? (yes/no)"
+	read response
+	if [ 'yes' == $response ]; then
+		echo "Enter external URL (currently: ${competition})"
+		read response
+		if [[ '' != $response ]]; then
+			competition=$response
+		fi
+		echo "Enter title"
+		read title
+		echo "Enter date (format:YYYY-MM-DD)"
+		read date
+		echo "Enter month (full month name)"
+		read month
+		echo "Enter venue"
+		read venue
+		echo "Enter time (enter ?? if unknown)"
+		read when
+		echo "Creating event, review before committing to repo"
+		post_title=$( tr '[:upper:]' '[:lower:]' <<< "${title}" )
+		post_title=$( tr " " "-" <<< "${post_title}" )
+		touch "_posts/${date}-${post_title}.md"
+		printf -- "---\n" >> _posts/${date}-${post_title}.md
+		printf "layout: post\n" >> _posts/${date}-${post_title}.md
+		printf "title: ${title}\n" >> _posts/${date}-${post_title}.md
+		printf "month: ${month}\n" >> _posts/${date}-${post_title}.md
+		printf "venue: ${venue}\n" >> _posts/${date}-${post_title}.md
+		printf "time: ${when}\n" >> _posts/${date}-${post_title}.md
+		printf "link: ${competition}\n" >>_posts/${date}-${post_title}.md
+		printf -- "---" >> _posts/${date}-${post_title}.md
+		echo "Event created successfully for ${title}"
+	else
+		echo "Skipping to next event"
+	fi
 done
