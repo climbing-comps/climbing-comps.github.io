@@ -21,23 +21,28 @@ var blog_urls = [ 'https://www.awesomewalls.co.uk/blog',
     'https://thereach.org.uk/info/news'
 ];
 
-function findClimbingComps( html ) {
-    var doc = parser.parseFromString( html, "text/html" );
-    doc.getElementsByTagName( 'a' ).forEach( function( link ) {
-        console.log( link.getAttribute( "href" ) );
-    } );
-}
-
 blog_urls.forEach( function( url ) {
-    html = httpGetAsync( url, 'findClimbingComps' );
+    xhr = createCORSRequest( 'GET', url );
+    if( ! xhr ) {
+        console.log( 'CORS not supported' );
+    }
+    xhr.onload = function() {
+        var doc = parser.parseFromString( xhr.responseText, "text/html" );
+        doc.getElementsByTagName( 'a' ).forEach( function( link ) {
+            console.log( link.getAttribute( "href" ) );
+        } );
+    };
 } );
 
-function httpGetAsync( theUrl, callback ) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if( xmlHttp.readyState == 4 && xmlHttp.status == 200 )
-            callback( xmlHttp.responseText );
-    };
-    xmlHttp.open( "GET", theUrl, true ); // true for asynchronous
-    xmlHttp.send( null );
+function createCORSRequest( method, url ) {
+    var xhr = new XMLHttpRequest();
+    if( "withCredentials" in xhr ) {
+        xhr.open( method, url, true );
+    } else if( typeof XDomainRequest != "undefined" ) {
+        xhr = new XDomainRequest();
+        xhr.open( method, url );
+    } else {
+        xhr = null;
+    }
+    return xhr;
 }
