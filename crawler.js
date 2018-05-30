@@ -28,7 +28,8 @@ blog_urls.forEach( function( url ) {
     }
     xhr.onload = function() {
         var doc = parser.parseFromString( xhr.responseText, "text/html" );
-        doc.getElementsByTagName( 'a' ).forEach( function( link ) {
+        var links = doc.getElementsByTagName( 'a' );
+        links.forEach( function( link ) {
             console.log( link.getAttribute( "href" ) );
         } );
     };
