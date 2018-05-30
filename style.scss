@@ -21,6 +21,7 @@ body {
   background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  text-align: center;
 }
 
 .container {
@@ -356,6 +357,8 @@ nav {
 .posts > .post {
   padding-bottom: 1em;
   border-bottom: 1px solid $orange;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .posts > .post:last-child {
@@ -368,9 +371,9 @@ nav {
     background-color: $lightGray;
     border-bottom: 3px solid #ffca6f;
     text-align: center;
-    margin: 0;
+    margin: -2px 0 0;
     padding: 15px;
-    border-top: 2px solid #ffca6f;
+    border-top: 3px solid #ffca6f;
   }
 }
 
@@ -397,7 +400,7 @@ nav {
 
 .wrapper-footer {
   margin-top: 20px;
-  border-top: 2px solid $orange;
+  border-top: 3px solid $orange;
   background-color: $lightGray;
 }
 
