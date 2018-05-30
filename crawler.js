@@ -39,6 +39,7 @@ blog_urls.forEach( function( url ) {
 
 function createCORSRequest( method, url ) {
     var xhr = new XMLHttpRequest();
+    console.log( xhr );
     if( "withCredentials" in xhr ) {
         xhr.open( method, url, true );
     } else if( typeof XDomainRequest != "undefined" ) {
@@ -47,5 +48,6 @@ function createCORSRequest( method, url ) {
     } else {
         xhr = null;
     }
+    console.log( xhr );
     return xhr;
 }
