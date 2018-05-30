@@ -39,11 +39,12 @@ blog_urls.forEach( function( url ) {
 
 function createCORSRequest( method, url ) {
     var xhr = new XMLHttpRequest();
+    xhr = new XDomainRequest();
+    xhr.open( method, url );
+    console.log ( xhr );
     if( "withCredentials" in xhr ) {
-        console.log( 'first' );
         xhr.open( method, url, true );
     } else if( typeof XDomainRequest != "undefined" ) {
-        console.log( 'second' );
         xhr = new XDomainRequest();
         xhr.open( method, url );
     } else {
