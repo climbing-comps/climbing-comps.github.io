@@ -232,11 +232,6 @@ textarea {
 //
 // .masthead
 //
-
-.wrapper-masthead {
-  margin-bottom: 20px;
-}
-
 .masthead {
   padding: 20px 0;
   border-bottom: 2px solid $orange;
@@ -371,8 +366,10 @@ nav {
 .posts {
   h1 {
     background-color: $lightGray;
-    border-bottom: 1px solid $darkGray;
+    border-bottom: 2px solid $orange;
     text-align: center;
+    margin: 0;
+    padding: 15px;
   }
 }
 

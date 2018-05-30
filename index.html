@@ -4,7 +4,6 @@ layout: default
 
 <div class="posts">
     <h1>June</h1>
-    <hr>
     {% for post in site.posts reversed | where:"month","June" %}
       <article class="post">
         <h2><a href="{{ post.link }}">
