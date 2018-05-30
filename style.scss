@@ -401,6 +401,9 @@ nav {
 .wrapper-footer {
   border-top: 3px solid $orange;
   background-color: $lightGray;
+  a {
+    display: inline-block;
+  }
 }
 
 .page {
