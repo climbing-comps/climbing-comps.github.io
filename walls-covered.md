@@ -25,5 +25,6 @@ permalink: /walls-covered/
 - [Mile End](https://www.mileendwall.org.uk/news-events/news_blog)
 - [The Castle](https://www.castle-climbing.co.uk/competitions-blog)
 - [The Reach](https://thereach.org.uk/info/news)
+- [Craggy Island](https://www.craggy-island.com/craggy-community/craggy-news)
 
-**Please don't expect this to catch all competitions!**
+**Please don't expect this to catch every single competition!**
