@@ -179,6 +179,11 @@ textarea {
   max-width: 100%;
 }
 
+hr {
+  border: 1px solid $orange;
+  margin-bottom: 15px;
+}
+
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
   max-width: none;
