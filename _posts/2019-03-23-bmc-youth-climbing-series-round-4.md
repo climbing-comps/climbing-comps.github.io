@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BMC Youth Climbing Series: Round 4
+title: BMC Youth Climbing Series Round 4
 month: March
 venue: TBC
 time: Westway

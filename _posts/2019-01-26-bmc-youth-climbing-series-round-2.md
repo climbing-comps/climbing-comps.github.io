@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BMC Youth Climbing Series: Round 2
+title: BMC Youth Climbing Series Round 2
 month: January
 venue: TBC
 time: ??

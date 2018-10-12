@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BMC Youth Climbing Series: Round 3
+title: BMC Youth Climbing Series Round 3
 month: March
 venue: Mile End
 time: ??
